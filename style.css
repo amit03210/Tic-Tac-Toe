@@ -1,3 +1,190 @@
-body{
-    background-color: black;
+:root {
+  --animation-delay: 0.5s;
+  --player-1-symbol: x;
+  --player-2-symbol: "---";
+}
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  height: 15vh;
+  border: 2px solid black;
+  display: flex;
+  justify-content: space-around;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.gameContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 85vh;
+  overflow: hidden;
+}
+
+.board {
+  display: grid;
+  grid-template-rows: repeat(3, 150px);
+  grid-template-columns: repeat(3, 150px);
+}
+
+.cell {
+  border: 2px solid black;
+}
+
+.cell:hover {
+  background: #00000005;
+}
+
+.cell {
+  position: relative;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* horizontal line */
+.horizontal-strike::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  width: 120%;
+  height: 2px;
+  background: red;
+  transform: translateY(50%);
+  z-index: 8;
+  animation: revealLeftToRight var(--animation-delay) ease forwards;
+}
+
+/* vertical line */
+.vertical-strike::after {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  width: 2%;
+  height: 120%;
+  background: red;
+  transform: translateY(0%);
+  animation: revealTopToBottom var(--animation-delay) ease forwards;
+}
+
+/* diagonal top-left */
+.diag-left-strike::after {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 2px;
+  height: calc(120% * 1.414);
+  background: red;
+  transform: rotate(-45deg);
+  transform-origin: top right;
+  animation: diagAnimation var(--animation-delay) ease forwards;
+}
+
+/* diagonal top-right */
+.diag-right-strike::after {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 2px;
+  height: calc(120% * 1.414);
+  background: red;
+  transform: rotate(45deg);
+  transform-origin: top right;
+  animation: diagAnimation var(--animation-delay) ease forwards;
+}
+
+@keyframes revealLeftToRight {
+  from {
+    width: 0;
+  }
+  to {
+    width: 120%;
+  }
+}
+
+@keyframes revealTopToBottom {
+  from {
+    height: 0;
+  }
+  to {
+    height: 120%;
+  }
+}
+
+@keyframes diagAnimation {
+  from {
+    height: 0;
+  }
+  to {
+    height: calc(120% * 1.414);
+  }
+}
+
+.add-player-1-symbol::before {
+  content: var(--player-1-symbol);
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: blue;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.add-player-2-symbol::before {
+  content: var(--player-2-symbol);
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: red;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  bottom: 15vh;
+  z-index: 1;
+}
+
+.score-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 50px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 150px;
+}
+
+.score-container > * {
+  padding: 0;
+  margin: 0;
+}
+
+.score-container > *:nth-child(2) {
+  color: blue;
+  padding-top: 50px;
+  font-size: 75px;
+}
+
+.count-down {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25px;
 }
