@@ -18,15 +18,17 @@ p {
 .header {
   height: 15vh;
   border: 2px solid black;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   box-sizing: border-box;
   align-items: center;
+  justify-items: center;
 }
 
 .gameContainer {
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  justify-items: center;
   align-items: center;
   height: 85vh;
   overflow: hidden;
@@ -62,7 +64,7 @@ p {
   height: 2px;
   background: red;
   transform: translateY(50%);
-  z-index: 8;
+  z-index: 1;
   animation: revealLeftToRight var(--animation-delay) ease forwards;
 }
 
@@ -172,7 +174,7 @@ p {
 }
 
 .score-container > * {
-  padding: 0;
+  padding: 5px;
   margin: 0;
 }
 
@@ -182,9 +184,91 @@ p {
   font-size: 75px;
 }
 
-.count-down {
+.highlight {
+  box-shadow: 0 0 5px 2px black;
+}
+
+.game-result {
+  font-size: 30px;
+}
+
+.form-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  background-color: plum;
+}
+
+#userForm {
   display: flex;
   flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 0 5px 5px black;
+}
+
+label {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+#userForm input,
+#userForm select,
+#userForm button {
+  padding: 10px;
+}
+
+#userForm button {
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.new-game {
+  padding: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 8;
+}
+
+.new-game:hover {
+  background: #5ae4a7;
+}
+
+.new-game:active {
+  background: #42a579;
+}
+
+.logo {
+  display: flex;
   align-items: center;
-  font-size: 25px;
+  justify-content: left;
+}
+
+.img {
+  display: inline-block;
+  background-image: url("./asset/logo.png");
+  background-size: cover; /* or contain */
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 100px;
+
+  transform: scale(0.5);
+}
+
+.logo p {
+  font-size: 1.5rem;
+}
+
+.game-finish {
+  top: 15vh;
 }

@@ -7,15 +7,45 @@
     <link href="./style.css" rel="stylesheet"></link>
 </head>
 <body>
-    <div class="header">
-        <div class="count-down">
-            <p>Next game countdown...</p>
-            <p class="counter">5</p>
+    <div class="form-overlay">
+        <div>
+        <form action="" id="userForm">
+            <h1>Tic-Tac-Toe</h1>
+            <label for="user1">Player 1 Name</label>
+            <input type="text" id="user1" placeholder="Player 1">
+             <label for="user2">Player 2 Name</label>
+            <input type="text" id="user2"placeholder="Player 2">
+            <label for="symbol">Player 1 (optional)</label>
+            <select name="symbol" id="symbol">
+                <option value="*">*</option>
+                <option value="X" selected>X</option>
+                <option value="O">O</option>
+                <option value="#">#</option>
+                <option value="@">@</option>
+                <option value="$">$</option>
+            </select>
+            <button type="button" class="form-button">Submit</button>
+        </form>
         </div>
+        
+    </div>
+    <div class="header">
+        <div class="logo">
+            <div class="img"></div>
+            <p>Tic-Tac-Toe</p>
+        </div>
+        <div class="game-result">
+            <p>Player who score 3 first will win</p>
+        </div>
+
+        <div><button class="new-game">New Game</button></div>
+    </div>
+    <div class="game-finish">
+        
     </div>
     <div class="gameContainer">
-        <div class="player-1-score score-container">
-            <p class="name">Player 1</p>
+        <div class="player-1-score score-container ">
+            <p class="name1 highlight">Player 1</p>
             <p class="score">0</p>
         </div>
         <div class="board">
@@ -30,13 +60,11 @@
             <div class="cell"></div>
             </div>
         <div class="player-2-score score-container">
-            <p class="name">Player</p>
+            <p class="name2">Player 2</p>
             <p class="score">0</p>
         </div>
     </div>
-    <div class="game-finish">
-        
-    </div>
+    
     <script src="./script.js"></script>
 </body>
 </html>
