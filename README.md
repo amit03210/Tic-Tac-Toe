@@ -1,7 +1,3 @@
-Here’s a polished GitHub README for your Tic-Tac-Toe project, tailored to the structure and features you've built:
-
----
-
 # 🎮 Tic-Tac-Toe Game
 
 A dynamic, browser-based Tic-Tac-Toe game built with vanilla JavaScript, HTML, and CSS. Two players compete to score 3 wins first, with animated strike-throughs and customizable player names and symbols.
@@ -76,14 +72,10 @@ A dynamic, browser-based Tic-Tac-Toe game built with vanilla JavaScript, HTML, a
 
 ## 🧑‍💻 Author
 
-Built by [Amit] — inspired by classic games and DOM wizardry.
+Built by Amit - inspired by classic games and DOM wizardry.
 
 ---
 
 ## 📄 License
 
 MIT License. Feel free to fork, remix, and improve!
-
----
-
-Would you like me to generate a logo or banner for the top of the README? Or help you write a short project description for GitHub?
