@@ -264,11 +264,9 @@ label {
 
   transform: scale(0.5);
 }
-
 .logo p {
   font-size: 1.5rem;
 }
-
 .game-finish {
   top: 15vh;
 }

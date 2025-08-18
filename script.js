@@ -101,7 +101,6 @@ let Player = function (pSym, index) {
   //Setting the marker;
   if (gameBoard[index] != "-") {
     console.log(gameBoard[index]);
-    // alert("cell already occupied");
   } else {
     //toggle Utils.isPlayer1;
     Utils.isPlayer1 = !Utils.isPlayer1;
